@@ -11,6 +11,7 @@ import Lecture3 from "./components/weeks/week1/Lecture3";
 import Lecture1Questionnaire from "./components/weeks/week1/Lecture1Questionnaire";
 import Lecture2Questionnaire from "./components/weeks/week1/Lecture2Questionnaire";
 import Lecture3Questionnaire from "./components/weeks/week1/Lecture3Questionnaire";
+import AssignmentInstructions from "./components/weeks/week1/AssignmentInstructions";
 
 const theme = createTheme({
   palette: {
@@ -37,6 +38,7 @@ const App: React.FC = () => {
                   <Route path="/week/1/lecture/1/questionnaire" element={<Lecture1Questionnaire />} />
                   <Route path="/week/1/lecture/2/questionnaire" element={<Lecture2Questionnaire />} />
                   <Route path="/week/1/lecture/3/questionnaire" element={<Lecture3Questionnaire />} />
+                  <Route path="/week/1/assignment/instructions" element={<AssignmentInstructions />} />
               </Routes>
           </Router>
       </ThemeProvider>

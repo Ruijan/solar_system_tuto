@@ -1,10 +1,16 @@
 import {Container, Typography, Box, Button} from '@mui/material';
 import {CopyBlock, dracula} from "react-code-blocks";
-import React from "react";
+import React, {useEffect} from "react";
 import { Link as RouterLink } from 'react-router-dom';
 
 
 export function Lecture1() {
+    useEffect(() => {
+        const completionStatus = JSON.parse(localStorage.getItem('completionStatus') || '{}');
+        completionStatus['lecture1'] = true;
+        localStorage.setItem('completionStatus', JSON.stringify(completionStatus));
+    }, []);
+
     return <Container maxWidth="md">
         <Box my={4}>
             <Typography variant="h4" component="h1" gutterBottom>

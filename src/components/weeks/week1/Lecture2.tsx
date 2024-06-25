@@ -1,11 +1,17 @@
 // src/components/weeks/week1/Lecture2.tsx
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Container, Typography, Box, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { CopyBlock, dracula } from 'react-code-blocks';
 
 const Lecture2: React.FC = () => {
+    useEffect(() => {
+        const completionStatus = JSON.parse(localStorage.getItem('completionStatus') || '{}');
+        completionStatus['lecture2'] = true;
+        localStorage.setItem('completionStatus', JSON.stringify(completionStatus));
+    }, []);
+
     return (
         <Container maxWidth="md">
             <Box my={4}>

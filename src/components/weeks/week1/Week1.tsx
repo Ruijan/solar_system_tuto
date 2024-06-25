@@ -19,39 +19,42 @@ import Grid from '@mui/material/Grid';
 import {Link as RouterLink} from "react-router-dom";
 import VerticalLinearStepper from "../../VerticalLinearStepper"; // Grid version 1
 
+const objectives = [
+    {
+        id: 'lecture1',
+        text: 'Lecture 1: Variables in Python',
+        subObjectives: [
+            { id: 'lecture1Content', text: 'Read Lecture 1', route: '/week/1/lecture/1' },
+            { id: 'lecture1Questionnaire', text: 'Complete Questionnaire', route: '/week/1/lecture/1/questionnaire' },
+        ],
+    },
+    {
+        id: 'lecture2',
+        text: 'Lecture 2: Control Structures',
+        subObjectives: [
+            { id: 'lecture2Content', text: 'Read Lecture 2', route: '/week/1/lecture/2' },
+            { id: 'lecture2Questionnaire', text: 'Complete Questionnaire', route: '/week/1/lecture/2/questionnaire' },
+        ],
+    },
+    {
+        id: 'lecture3',
+        text: 'Lecture 3: Data Structures',
+        subObjectives: [
+            { id: 'lecture3Content', text: 'Read Lecture 3', route: '/week/1/lecture/3' },
+            { id: 'lecture3Questionnaire', text: 'Complete Questionnaire', route: '/week/1/lecture/3/questionnaire' },
+        ],
+    },
+    {
+        id: 'assignment1',
+        text: 'Week 1 Assignment',
+        subObjectives: [
+            { id: 'assignment1Instructions', text: 'Read Assignment Instructions', route: '/week/1/assignment/instructions' },
+        ],
+    },
+];
+
 
 const Week1: React.FC = () => {
-    const [steps, setSteps] = useState<{ id: string; text: string; subSteps?: { id: string; text: string }[] }[]>([]);
-
-    useEffect(() => {
-        const headingElements = Array.from(document.querySelectorAll('h2, h3'));
-        const newSteps: { id: string; text: string; subSteps?: { id: string; text: string }[] }[] = [];
-
-        headingElements.forEach((heading) => {
-            const element = heading as HTMLElement;
-            if (element.tagName.toLowerCase() === 'h2') {
-                newSteps.push({
-                    id: element.id || element.innerText.replace(/\s+/g, '-').toLowerCase(),
-                    text: element.innerText,
-                    subSteps: [],
-                });
-            } else if (element.tagName.toLowerCase() === 'h3' && newSteps.length > 0) {
-                newSteps[newSteps.length - 1].subSteps?.push({
-                    id: element.id || element.innerText.replace(/\s+/g, '-').toLowerCase(),
-                    text: element.innerText,
-                });
-            }
-        });
-
-        headingElements.forEach((heading) => {
-            const element = heading as HTMLElement;
-            element.id = element.innerText.replace(/\s+/g, '-').toLowerCase();
-        });
-
-        setSteps(newSteps);
-    }, []);
-
-
     return (
         <Container maxWidth="md">
             <Box my={4}>
@@ -59,7 +62,7 @@ const Week1: React.FC = () => {
                     Week 1: Refresher on Basics and Simple Planet Generation
                 </Typography>
                 <Box sx={{ position: 'fixed', top: '20px', right: '20px', width: '300px', height: '90vh', overflowX: 'hidden' }}>
-                    <VerticalLinearStepper steps={steps} />
+                    <VerticalLinearStepper objectives={objectives} />
                 </Box>
                 <Grid container my={4}>
                     <Grid xs={8}>
@@ -168,6 +171,9 @@ const Week1: React.FC = () => {
                     <Typography variant="h4" component="h2" gutterBottom my={2}>
                         Assignments
                     </Typography>
+                    <Button variant="contained" color="primary" component={RouterLink} to="/week/1/assignment/instructions">
+                        View Assignment Instructions
+                    </Button>
                 </Box>
             </Box>
         </Container>
