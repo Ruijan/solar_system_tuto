@@ -13,10 +13,10 @@ const Introduction: React.FC = () => {
 
         // List of files to include in the zip
         const files = [
-            'week1_code/src/__init__.py',
-            'week1_code/src/main.py',
-            'week1_code/tests/__init__.py',
-            'week1_code/tests/test_main.py'
+            'assignments/week1_code/src/__init__.py',
+            'assignments/week1_code/src/main.py',
+            'assignments/week1_code/tests/__init__.py',
+            'assignments/week1_code/tests/test_main.py'
         ];
 
         // Fetch each file and add to the zip
