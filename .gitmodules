@@ -1,0 +1,3 @@
+[submodule "public/assignments"]
+	path = public/assignments
+	url = https://github.com/Ruijan/solar_system_assignments
