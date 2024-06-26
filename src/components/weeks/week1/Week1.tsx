@@ -1,6 +1,6 @@
 // src/components/Week1.tsx
 
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
     Box,
     Button,
@@ -14,41 +14,41 @@ import {
     Typography,
     Divider
 } from '@mui/material';
-import TableOfContents from "../../TableOfContents";
 import Grid from '@mui/material/Grid';
 import {Link as RouterLink} from "react-router-dom";
-import VerticalLinearStepper from "../../VerticalLinearStepper"; // Grid version 1
+import VerticalLinearStepper from "../../VerticalLinearStepper";
+import {VSCodeInstallation} from "./VSCodeInstructions";
 
 const objectives = [
     {
         id: 'lecture1',
         text: 'Lecture 1: Variables in Python',
         subObjectives: [
-            { id: 'lecture1Content', text: 'Read Lecture 1', route: '/week/1/lecture/1' },
-            { id: 'lecture1Questionnaire', text: 'Complete Questionnaire', route: '/week/1/lecture/1/questionnaire' },
+            { id: 'lecture1Content', text: 'Read Lecture 1', route: '/week1/lecture1' },
+            { id: 'lecture1Questionnaire', text: 'Complete Questionnaire', route: '/week1/lecture1/questionnaire' },
         ],
     },
     {
         id: 'lecture2',
         text: 'Lecture 2: Control Structures',
         subObjectives: [
-            { id: 'lecture2Content', text: 'Read Lecture 2', route: '/week/1/lecture/2' },
-            { id: 'lecture2Questionnaire', text: 'Complete Questionnaire', route: '/week/1/lecture/2/questionnaire' },
+            { id: 'lecture2Content', text: 'Read Lecture 2', route: '/week1/lecture2' },
+            { id: 'lecture2Questionnaire', text: 'Complete Questionnaire', route: '/week1/lecture2/questionnaire' },
         ],
     },
     {
         id: 'lecture3',
         text: 'Lecture 3: Data Structures',
         subObjectives: [
-            { id: 'lecture3Content', text: 'Read Lecture 3', route: '/week/1/lecture/3' },
-            { id: 'lecture3Questionnaire', text: 'Complete Questionnaire', route: '/week/1/lecture/3/questionnaire' },
+            { id: 'lecture3Content', text: 'Read Lecture 3', route: '/week1/lecture3' },
+            { id: 'lecture3Questionnaire', text: 'Complete Questionnaire', route: '/week1/lecture3/questionnaire' },
         ],
     },
     {
         id: 'assignment1',
         text: 'Week 1 Assignment',
         subObjectives: [
-            { id: 'assignment1Instructions', text: 'Read Assignment Instructions', route: '/week/1/assignment/instructions' },
+            { id: 'assignment1Instructions', text: 'Read Assignment Instructions', route: '/week1/assignment/instructions' },
         ],
     },
 ];
@@ -61,7 +61,7 @@ const Week1: React.FC = () => {
                 <Typography variant="h3" component="h1" gutterBottom>
                     Week 1: Refresher on Basics and Simple Planet Generation
                 </Typography>
-                <Box sx={{ position: 'fixed', top: '20px', right: '20px', width: '300px', height: '90vh', overflowX: 'hidden' }}>
+                <Box sx={{ position: 'fixed', top: '250px', right: '20px', width: '300px', height: '90vh', overflowX: 'hidden' }}>
                     <VerticalLinearStepper objectives={objectives} />
                 </Box>
                 <Grid container my={4}>
@@ -124,7 +124,7 @@ const Week1: React.FC = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" component={RouterLink} to="/week/1/lecture/1">
+                                    <Button size="small" component={RouterLink} to="/week1/lecture1">
                                         Go to Lecture
                                     </Button>
                                 </CardActions>
@@ -141,7 +141,7 @@ const Week1: React.FC = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" component={RouterLink} to="/week/1/lecture/2">
+                                    <Button size="small" component={RouterLink} to="/week1/lecture2">
                                         Go to Lecture
                                     </Button>
                                 </CardActions>
@@ -158,7 +158,7 @@ const Week1: React.FC = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" component={RouterLink} to="/week/1/lecture/3">
+                                    <Button size="small" component={RouterLink} to="/week1/lecture3">
                                         Go to Lecture
                                     </Button>
                                 </CardActions>
@@ -166,12 +166,14 @@ const Week1: React.FC = () => {
                         </Grid>
                     </Grid>
                 </Box>
+                <Divider/>
+                <VSCodeInstallation/>
                 <Box my={4}>
                     <Divider />
                     <Typography variant="h4" component="h2" gutterBottom my={2}>
                         Assignments
                     </Typography>
-                    <Button variant="contained" color="primary" component={RouterLink} to="/week/1/assignment/instructions">
+                    <Button variant="contained" color="primary" component={RouterLink} to="/week1/assignment/instructions">
                         View Assignment Instructions
                     </Button>
                 </Box>

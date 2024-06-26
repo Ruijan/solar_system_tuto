@@ -34,7 +34,7 @@ const Lecture2Questionnaire: React.FC = () => {
         const completionStatus = JSON.parse(localStorage.getItem('completionStatus') || '{}');
         completionStatus['lecture2Questionnaire'] = true;
         localStorage.setItem('completionStatus', JSON.stringify(completionStatus));
-        navigate('/week/1/lecture/3');
+        navigate('/week1/lecture3');
     };
 
     return <Questionnaire questions={questions} onSuccess={handleSuccess} />;

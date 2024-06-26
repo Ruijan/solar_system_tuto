@@ -120,7 +120,7 @@ for planet, moons in solar_system.items():
                 />
 
                 <Box mt={4}>
-                    <Button variant="contained" color="primary" component={RouterLink} to="/week/1/lecture/3/questionnaire">
+                    <Button variant="contained" color="primary" component={RouterLink} to="/week1/lecture3/questionnaire">
                         Take the Questionnaire
                     </Button>
                 </Box>

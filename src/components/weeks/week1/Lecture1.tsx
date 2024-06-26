@@ -81,7 +81,7 @@ export function Lecture1() {
                 codeBlock
             />
             <Box mt={4}>
-                <Button variant="contained" color="primary" component={RouterLink} to="/week/1/lecture/1/questionnaire">
+                <Button variant="contained" color="primary" component={RouterLink} to="/week1/lecture1/questionnaire">
                     Take the Questionnaire
                 </Button>
             </Box>
