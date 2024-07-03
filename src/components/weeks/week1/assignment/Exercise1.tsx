@@ -66,7 +66,7 @@ print(generate_planet_name())`}
                 Once you have implemented the function, you can run the unit tests to verify its correctness. Open a terminal in your project's root directory and run the following command:
             </Typography>
             <CopyBlock
-                text={`python -m unittest discover -s tests -p 'test_planet_generation.py'`}
+                text={`python -m unittest discover -s tests -p 'test_main.py' -k test_generate_planet_name`}
                 language="python"
                 theme={dracula}
                 codeBlock

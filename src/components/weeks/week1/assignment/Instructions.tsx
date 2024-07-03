@@ -21,7 +21,7 @@ const Introduction: React.FC = () => {
 
         // Fetch each file and add to the zip
         for (const filePath of files) {
-            const response = await fetch(`/${filePath}`);
+            const response = await fetch(`${process.env.PUBLIC_URL}/${filePath}`);
             if (response.ok) {
                 const content = await response.text();
                 week1CodeFolder?.file(filePath.split('/').slice(-2).join('/'), content);
