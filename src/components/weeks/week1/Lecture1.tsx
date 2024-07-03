@@ -88,3 +88,5 @@ export function Lecture1() {
         </Box>
     </Container>;
 }
+
+export default Lecture1;
