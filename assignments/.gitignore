@@ -1,0 +1,9 @@
+# Ignore all .idea directories
+.idea/
+
+# Ignore all .pytest_cache directories
+.pytest_cache/
+__pycache__/
+
+# Ignore all .vscode directories
+.vscode/
